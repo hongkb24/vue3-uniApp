@@ -13,7 +13,7 @@ export function getFullURL(
   if (url.startsWith('http')) {
     return buildURL(url, params, paramsSerializer)
   }
-  baseURL = baseURL.endsWith('/') ? baseURL : `${baseURL}/`
-  url = url.startsWith('/') ? url.slice(1) : url
-  return buildURL(`${baseURL}${url}`, params, paramsSerializer)
+  const newNaseURL = baseURL.endsWith('/') ? baseURL : `${baseURL}/`
+  const newUrl = url.startsWith('/') ? url.slice(1) : url
+  return buildURL(`${newNaseURL}${newUrl}`, params, paramsSerializer)
 }
