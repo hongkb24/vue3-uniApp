@@ -1,34 +1,15 @@
 {
   "pages": [
-    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "uni-app-home"
+        "navigationBarTitleText": "HOME"
       }
     },
     {
-      "path": "pages/pinia/index",
+      "path": "pages/my/index",
       "style": {
-        "navigationBarTitleText": "状态管理工具（pinia）"
-      }
-    },
-    {
-      "path": "pages/axios/index",
-      "style": {
-        "navigationBarTitleText": "Axios（网络请求示例）"
-      }
-    },
-    {
-      "path": "pages/uview/index",
-      "style": {
-        "navigationBarTitleText": "uView 示例组件"
-      }
-    },
-    {
-      "path": "pages/unocss/index",
-      "style": {
-        "navigationBarTitleText": "UnoCSS 示例"
+        "navigationBarTitleText": "My"
       }
     }
   ],
@@ -37,6 +18,32 @@
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "height": "50px",
+    "fontSize": "10px",
+    "iconWidth": "24px",
+    "spacing": "3px",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的"
+      }
+    ],
+    "midButton": {
+      "width": "80px",
+      "height": "50px",
+      "text": "文字",
+      "iconWidth": "24px"
+    }
   },
   "easycom": {
     "custom": {

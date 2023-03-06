@@ -1,42 +1,28 @@
 <template>
   <view class="index-page">
-    <Hello />
-    <UnoCss />
     <text class="h2"> 查看其它页面示例↓ </text>
-    <view>
-      <navigator v-for="(v, idx) in pages" :key="idx" :url="v.url">{{
-        v.title
-      }}</navigator>
-    </view>
+    <u-button type="primary" @click="addPages">addPages</u-button>
+    <u-icon name="photo" color="#2979ff" size="50"></u-icon>
+    <u-tabs :list="pages" :is-scroll="false"></u-tabs>
+
+    <div v-for="(item, index) in pages" :key="index">
+      {{ item.name }}
+    </div>
   </view>
 </template>
 
 <script setup lang="ts">
 import { reactive } from 'vue'
-import Hello from '@/components/hello/index.vue'
-import UnoCss from '@/components/unocss/index.vue'
 
-const pages = reactive([
-  {
-    title: 'Pinia Demo',
-    url: '/pages/pinia/index'
-  },
-  {
-    title: 'Axios Demo',
-    url: '/pages/axios/index'
-  },
-  {
-    title: 'uView Demo',
-    url: '/pages/uview/index'
-  },
-  {
-    title: 'UnoCSS Demo',
-    url: '/pages/unocss/index'
-  }
-])
+const pages = reactive([]) as { name?: string }[]
+const addPages = () => {
+  pages.push({
+    name: 'hello'
+  })
+}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .index-page {
   font-style: normal;
   text-align: center;
